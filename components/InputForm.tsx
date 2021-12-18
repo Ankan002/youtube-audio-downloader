@@ -3,14 +3,6 @@ import { useRecoilState } from 'recoil'
 import { result } from '../atom/resultAtom'
 import { globalLoading } from '../atom/loadingAtom'
 
-//Dummy Response
-// duration: 201.97877632641
-// link: "https://cdn02.ytjar.xyz/get.php/7/49/xTuBmbZZ-ag.mp3?cid=MTczLjI0OS4xMC4yMjJ8TkF8REU%3D&h=936uYomHFIxBQAjLF69PYQ&s=1639845123&n=Dil-Ibadat-Unplugged-Cover-Adnan-Ahmad-Tum-Mile-KK-Emraan-Hashmi"
-// msg: "success"
-// progress: 0
-// status: "ok"
-// title: "Dil Ibadat - Unplugged Cover | Adnan Ahmad | Tum Mile | KK | Emraan Hashmi"
-
 const InputForm = () => {
 
     const [currentLink, setCurrentLink] = useState<string | null>('')
@@ -27,7 +19,7 @@ const InputForm = () => {
 
         const firstArrayChunck: Array<string> = currentLink.split('/')
 
-        if (firstArrayChunck[3].length === 10) {
+        if (firstArrayChunck[3].length === 11) {
             setLoading(true)
 
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${firstArrayChunck[3]}`, {
