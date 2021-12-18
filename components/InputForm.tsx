@@ -27,6 +27,28 @@ const InputForm = () => {
 
         const firstArrayChunck: Array<string> = currentLink.split('/')
 
+        if (firstArrayChunck[3].length === 10) {
+            setLoading(true)
+
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${firstArrayChunck[3]}`, {
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-host": process.env.NEXT_PUBLIC_HOST,
+                    "x-rapidapi-key": process.env.NEXT_PUBLIC_KEY
+                }
+            })
+
+            const data = await response.json()
+
+            setApiResult(data)
+
+            setLoading(false)
+
+            setCurrentLink('')
+
+            return
+        }
+
         if (!firstArrayChunck[3]) return
 
         const metaDataArrayChunk: Array<string> = firstArrayChunck[3].split('&')
