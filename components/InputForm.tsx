@@ -51,8 +51,6 @@ const InputForm = () => {
 
         const data = await response.json()
 
-        console.log(data)
-
         setApiResult(data)
 
         setLoading(false)
