@@ -13,7 +13,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen items-center bg-black">
       <Head>
         <title>YAudio</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <div className='flex-grow min-w-full flex flex-col items-center'>
